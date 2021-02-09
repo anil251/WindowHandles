@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [SmokeSuite]" parallel="none">
+  <parameter name="browser" value="chrome"/>
+  <test thread-count="5" name="Window_Handles_Test">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.windowhandles.TestScripts.HomePageTest"/>
+    </classes>
+  </test> <!-- Window_Handles_Test -->
+  <test name="Window_Handles_Test(failed)" parallel="none">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.windowhandles.TestScripts.HomePageTest">
+        <methods>
+          <include name="openbrowser"/>
+          <include name="homepage"/>
+        </methods>
+      </class> <!-- com.windowhandles.TestScripts.HomePageTest -->
+    </classes>
+  </test> <!-- Window_Handles_Test(failed) -->
+</suite> <!-- Failed suite [SmokeSuite] -->
