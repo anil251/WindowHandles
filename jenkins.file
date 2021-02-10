@@ -3,9 +3,9 @@ pipeline {
 agent any
    stages{
    
-      stage('Compile Clean'){
+      stage('Compile Stage'){
           steps {
-             WithMaven(maven : 'maven-3.6.3'){
+             WithMaven(maven : 'C:\Program Files\apache-maven-3.6.3'){
                 sh 'mvn clean'
       }
      }
@@ -13,7 +13,7 @@ agent any
    
    stage('Testing Stage'){
           steps {
-             WithMaven(maven : 'maven-3.6.3'){
+             WithMaven(maven : 'C:\Program Files\apache-maven-3.6.3'){
                 sh 'mvn test'
       }
      }
@@ -21,8 +21,8 @@ agent any
    
    stage('Deploy Stage'){
           steps {
-             WithMaven(maven : 'maven-3.6.3'){
-                sh 'mvn test deploy'
+             WithMaven(maven : 'C:\Program Files\apache-maven-3.6.3'){
+                sh 'mvn  deploy'
       		}
     	 }
    	  }
