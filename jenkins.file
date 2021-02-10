@@ -3,7 +3,13 @@ pipeline {
 agent any
    stages{
    
-     
+      stage('Compile Clean'){
+          steps {
+             WithMaven(maven : 'maven-3.6.3'){
+                sh 'mvn clean'
+      }
+     }
+   }
    
    stage('Testing Stage'){
           steps {
